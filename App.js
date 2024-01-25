@@ -4,6 +4,7 @@ import { StyleSheet, Text, View,FlatList, Alert, TouchableWithoutFeedback, Keybo
 import Header from './components/header';
 import TodoItem from './components/TodoItem';
 import AddTodo from './components/AddTodo';
+import Sandbox from './components/sandBox';
 
 export default function App() {
 
@@ -38,6 +39,7 @@ export default function App() {
   }
 
   return (
+    // <Sandbox/>
     <TouchableWithoutFeedback onPress={()=>{
       Keyboard.dismiss();
     }}>
@@ -53,6 +55,7 @@ export default function App() {
                 <TodoItem item={item} pressHandler={pressHandler}/>
               )}
             />
+            
           </View>
         </View>
       </View>
@@ -69,8 +72,11 @@ const styles = StyleSheet.create({
   },
   content:{
     padding:40,
+    // flex prevents our content from overflowing and being hidden in the screen
+    flex:1,
   },
   list:{
     marginTop:20,
+    flex:1,
   },
 });
